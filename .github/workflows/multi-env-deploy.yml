@@ -1,0 +1,20 @@
+name: Manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        default: dev
+        required: true
+        options:
+          - dev
+          - staging
+          - prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print environment details
+        run: |
+          echo "Code is deployed to ${{ inputs.environment }} environment"
