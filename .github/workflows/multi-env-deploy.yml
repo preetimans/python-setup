@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       environment:
+        type: choice
+        description: 'Select the target environment'
         default: dev
         required: true
         options:
